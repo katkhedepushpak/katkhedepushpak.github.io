@@ -122,6 +122,8 @@ h6 {
   }
 }
 
+
+
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
@@ -528,6 +530,147 @@ section {
   transition: 0.9s;
   background-color: #0563bb;
 }
+
+
+<section id="skills" class="skills section-bg">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title">
+      <h2>Skills</h2>
+      <p>"Hard skills are important to demonstrate a professional's technical expertise." <br />I have tried to summarize my technical skillset as per my belief</p>
+    </div>
+    <div class="row skills-content">
+      <div class="col-lg-6">
+        <div class="skill-item">
+          <h4>Programming Languages</h4>
+          <span class="skill">Python, C++, JavaScript</span>
+        </div>
+        <div class="skill-item">
+          <h4>Databases</h4>
+          <span class="skill">MySQL, PostgreSQL</span>
+        </div>
+        <div class="skill-item">
+          <h4>Frameworks</h4>
+          <span class="skill">Flask, Django, React, SQLAlchemy</span>
+        </div>
+        <div class="skill-item">
+          <h4>Technologies</h4>
+          <span class="skill">Kubernetes, Docker, Jenkins CI/CD, AWS, AWS Comprehend, Amazon SageMaker</span>
+        </div>
+        <div class="skill-item">
+          <h4>Tools</h4>
+          <span class="skill">Git, Swagger, Jira, ServiceNow, Postman, RedHat OpenShift, Grafana, Splunk</span>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="skill-item">
+          <h4>Libraries</h4>
+          <span class="skill">NumPy, Pandas, SciPy, Scikit-Learn, Matplotlib, Seaborn, PyTorch, NLTK, Folium</span>
+        </div>
+        <div class="skill-item">
+          <h4>Domains</h4>
+          <span class="skill">DevOps, Cloud Services, Machine Learning, Data Analytics, Agile Development, Microservices</span>
+        </div>
+        <div class="skill-item">
+          <h4>Machine Learning Techniques</h4>
+          <span class="skill">Supervised & Unsupervised Algorithms, Optimization techniques, Kernel Methods, Feature Engineering</span>
+        </div>
+        <div class="skill-item">
+          <h4>Web Technologies</h4>
+          <span class="skill">HTML/CSS, Bootstrap, JSON, REST API, NodeJS</span>
+        </div>
+        <div class="skill-item">
+          <h4>Development Processes</h4>
+          <span class="skill">SDLC, Agile, Microservices Architecture</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End of Skills Section -->
+
+<!-- Add this CSS to your stylesheet -->
+<style>
+  /* Section background */
+  .section-bg {
+    background: #f9f9f9;
+    padding: 60px 0;
+  }
+
+  /* Section title */
+  .section-title h2 {
+    font-size: 32px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  .section-title p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 40px;
+  }
+
+  /* Skills container */
+  .skills-content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  /* Skill item styling */
+  .skill-item {
+    margin-bottom: 25px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .skill-item h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  .skill-item .skill {
+    font-size: 14px;
+    font-weight: 400;
+    color: #777;
+  }
+
+  /* Add hover effect */
+  .skill-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Text alignment */
+  .skills-content .col-lg-6 {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  /* Add transition effects */
+  [data-aos="fade-up"] {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.4s ease-in-out;
+  }
+
+  [data-aos="fade-up"].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .skill-item {
+      margin-bottom: 20px;
+      padding: 15px;
+    }
+  }
+
 
 /*--------------------------------------------------------------
 # Resume
