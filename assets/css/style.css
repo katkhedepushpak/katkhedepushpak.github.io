@@ -498,6 +498,62 @@ section {
 /*--------------------------------------------------------------
 # Akills
 --------------------------------------------------------------*/
+.skills {
+  padding: 50px 0;
+  background-color: #f8f9fa;
+}
+
+.skills .section-title h2 {
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.skills .section-title p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.skills-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.skill-category {
+  margin-bottom: 20px;
+}
+
+.skill-category h4 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #007bff;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.skill-category h4 i {
+  margin-right: 10px;
+  font-size: 24px;
+  color: #007bff;
+}
+
+.skill-category p {
+  font-size: 16px;
+  color: #555;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .skills-content {
+    flex-direction: column;
+  }
+}
+
 .skills .progress {
   height: 60px;
   display: block;
@@ -531,6 +587,66 @@ section {
   background-color: #0563bb;
 }
 
+/*--------------------------------------------------------------
+# Timeline
+--------------------------------------------------------------*/
+.timeline {
+  position: relative;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.timeline-icon {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-right: 20px;
+}
+
+.timeline-content {
+  background: #fff;
+  border-radius: 8px;
+  padding: 15px 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  flex-grow: 1;
+}
+
+.timeline-content h4 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #007bff;
+}
+
+.timeline-content p {
+  font-size: 16px;
+  color: #555;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .timeline-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .timeline-icon {
+    margin-bottom: 10px;
+  }
+}
 
 <section id="skills" class="skills section-bg">
   <div class="container" data-aos="fade-up">
@@ -671,6 +787,68 @@ section {
     }
   }
 
+  .project-card {
+    width: 350px; /* Reduced card width */
+    height: 400px; /* Maintained card height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Prevents content overflow */
+    border-radius: 8px; /* Optional: Adds rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+  }
+
+  .project-card img {
+    height: 133px; /* Adjusted image height to maintain the ratio */
+    width: 100%; /* Image width spans the card */
+    object-fit: cover; /* Ensures the image fits within the card */
+    border-top-left-radius: 8px; /* Matches card border radius */
+    border-top-right-radius: 8px;
+  }
+
+  .project-card .card-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 267px; /* Remaining space for title, text, and buttons */
+  }
+
+  .project-card .card-title {
+    font-size: 18px; /* Slightly smaller font size for the title */
+    font-weight: bold;
+    height: 33px; /* Adjusted title height */
+    margin-bottom: 10px;
+    overflow: hidden; /* Prevents overflow if the title is too long */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .project-card .card-text {
+    font-size: 14px; /* Slightly smaller font size for text */
+    height: 200px; /* Adjusted text section height */
+    overflow: hidden; /* Prevents overflow */
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 8; /* Limits text to 8 lines */
+    -webkit-box-orient: vertical;
+  }
+
+  .project-card .btn {
+    font-size: 12px; /* Slightly smaller button font size */
+    padding: 5px 10px; /* Button padding */
+    height: 30px; /* Adjusted button height */
+    line-height: 20px; /* Centers text vertically */
+    margin-right: 5px; /* Adds spacing between buttons */
+  }
+
+  .project-card .btn-container {
+    display: flex;
+    justify-content: flex-start; /* Aligns buttons to the left */
+    gap: 5px; /* Adds spacing between buttons */
+  }
+</style>
 
 /*--------------------------------------------------------------
 # Resume

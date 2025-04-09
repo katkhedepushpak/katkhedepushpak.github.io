@@ -14,7 +14,7 @@
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -26,9 +26,6 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-
-
-  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
     .bd-placeholder-img {
@@ -44,334 +41,546 @@
         font-size: 3.5rem;
       }
     }
+
+    .intro-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 50px 0;
+    }
+
+    .intro-section img {
+      border-radius: 50%;
+      max-width: 50%;
+      height: auto;
+    }
+
+    .intro-section .content {
+      max-width: 600px;
+      margin-top: 70px; /* Added margin to distribute content evenly */
+       /* Added margin to create a gap between the photo and text */
+    }
+
+    .social-links a {
+      margin-right: 10px;
+      font-size: 20px;
+    }
   </style>
+  <style>
+    .social-links a {
+      margin-right: 10px;
+      font-size: 30px; /* Increased font size for larger icons */
+    }
+  </style>
+  <style>
+    .intro-section img {
+      border-radius: 50%;
+      max-width: 100%;
+      height: auto;
+      margin-top: 30px;
+      padding-right: 50px; /* Adds 50px padding to the right of the image */
+    }
+  </style>
+  <style>
+    .no-bullets {
+      list-style: none; /* Removes the default round bullets */
+      padding-left: 0; /* Removes left padding */
+    }
 
+    .no-bullets li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px; /* Adds spacing between items */
+    }
+s
+    .no-bullets i {
+      color: green; /* Optional: Change the color of the check icon */
+      margin-right: 10px; /* Adds spacing between the icon and text */
+    }
+  </style>
+  <style>
+    .intro-section .col-lg-4:last-child {
+      padding-left: 20px;
+      margin-left: 10px; /* Adds 50px padding to the rightmost section */
+    }
+  </style>
+  <style>
+    .intro-section .container {
+      width: 90%; /* Set the container width to 90% of the screen */
+      max-width: 90%; /* Ensure it doesn't exceed 90% */
+    }
+  </style>
+  <style>
+    section:nth-child(odd) {
+      background-color: #f8f9fa; /* Light grey background for odd sections */
+    }
 
-  <!-- Custom styles for carousel template -->
-  <link href="assets/css/carousel.css" rel="stylesheet">
+    section:nth-child(even) {
+      background-color: #ffffff; /* White background for even sections */
+    }
 
+    section {
+      padding: 50px 0; /* Add consistent padding to all sections */
+    }
+  </style>
+  <style>
+    .project-card {
+      width: 380px; /* Card width */
+      height: 400px; /* Card height */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+      overflow: hidden; /* Prevents content overflow */
+      border-radius: 8px; /* Optional: Adds rounded corners */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Default shadow */
+    }
 
+    .project-card:hover {
+      transform: translateY(-10px); /* Moves the card slightly upward */
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Adds a stronger shadow on hover */
+    }
+
+    .project-card .card-img {
+      height: 133px; /* Fixed height for the image section */
+      width: 100%; /* Full width of the card */
+      overflow: hidden; /* Ensures the image does not overflow */
+      border-top-left-radius: 8px; /* Matches card border radius */
+      border-top-right-radius: 8px;
+    }
+
+    .project-card .card-img img {
+      height: 100%; /* Image height fills the wrapper */
+      width: auto; /* Image width adjusts proportionally */
+      object-fit: cover; /* Ensures the image fits nicely */
+    }
+
+    .project-card .card-body {
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 267px; /* Remaining space for title, text, and buttons */
+    }
+
+    .project-card .card-title {
+      font-size: 18px; /* Title font size */
+      font-weight: bold;
+      height: 33px; /* Title height */
+      margin-bottom: 10px;
+      overflow: hidden; /* Prevents overflow if the title is too long */
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .project-card .card-text {
+      font-size: 14px; /* Text font size */
+      height: 200px; /* Text section height */
+      overflow: hidden; /* Prevents overflow */
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 8; /* Limits text to 8 lines */
+      -webkit-box-orient: vertical;
+    }
+
+    .project-card .btn {
+      font-size: 12px; /* Button font size */
+      padding: 5px 10px; /* Button padding */
+      height: 30px; /* Button height */
+      line-height: 20px; /* Centers text vertically */
+      margin-right: 5px; /* Adds spacing between buttons */
+    }
+
+    .project-card .btn-container {
+      display: flex;
+      padding-top: 5px;
+      justify-content: flex-start; /* Aligns buttons to the left */
+      gap: 5px; /* Adds spacing between buttons */
+    }
+  </style>
 </head>
 
 <body>
 
-  <!-- ======= Mobile nav toggle button ======= -->
-  <!-- <button type="button" class="mobile-nav-toggle d-xl-none"><i class="bi bi-list mobile-nav-toggle"></i></button> -->
-  <i class="bi bi-list mobile-nav-toggle d-lg-none"></i>
   <!-- ======= Header ======= -->
   <header id="header" class="d-flex flex-column justify-content-center">
-
     <nav id="navbar" class="navbar nav-menu">
       <ul>
-        <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-        <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
+        <li><a href="#intro" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
         <li><a href="#skills" class="nav-link scrollto"><i class="bx bx-code-curly"></i> <span>Skills</span></a></li>
         <li><a href="#resume" class="nav-link scrollto"><i class='bx bx-trip'></i> <span>Journey</span></a></li>
         <li><a href="#projects" class="nav-link scrollto"><i class="bx bxs-terminal"></i> <span>Projects</span></a></li>
-        <!-- <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li> -->
         <li><a href="#services" class="nav-link scrollto"><i class="bx bx-credit-card"></i> <span>Credentials</span></a></li>
         <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
       </ul>
-    </nav><!-- .nav-menu -->
-
+    </nav>
   </header><!-- End Header -->
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center">
-    <div class="container" data-aos="zoom-in" data-aos-delay="100">
-      <h1>Pushpak Katkhede</h1>
-      <p>I'm <span class="typed" data-typed-items="Master's Student, Full Stack Developer, Machine Learning Enthusiast, Cricketer, Photographer, Graphics Design "></span></p>
-
-      <div class="social-links">
-        <a href="http://www.facebook.com/katkhedepushpak/" class="facebook" target="_blank"><i class="bx bxl-facebook"> |</i></a>
-        <a href="https://www.instagram.com/pushpak_katkhede/" class="instagram" target="_blank"><i class="bx bxl-instagram"> |</i></a>
-        <a href="http://github.com/katkhedepushpak" class="github" target="_blank"><i class="bx bxl-github"> |</i></a>
-        <a href="http://www.linkedin.com/in/pushpakkatkhede" class="linkedin" target="_blank"><i class="bx bxl-linkedin"> |</i></a>
-        <p style="font-size: 20px;">Connect with me</p>
-      </div>
-    </div>
-  </section><!-- End Hero -->
-
-  <main id="main">
-
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>About</h2>
-          <p> I am Master's Graduate from Oregon State University majored in computer science with a bachelor’s in computer engineering. Before this, I have 3 years of full-time professional experience as an AIOps engineer with IBM and a
-            four-month internship with Tech-Amplifiers.
+  <!-- ======= Intro Section ======= -->
+  <section id="intro" class="intro-section">
+    <div class="container" data-aos="fade-up">
+      <div class="row">
+        <div class="col-lg-3 content">
+          <img src="assets/img/profile-img.jpg" class="img-fluid" alt="Profile Image">
+          <hr>
+          <h4 style="text-align: center; font-weight: bold;">Software Engineer</h4>
+          <h4 style="text-align: center; font-weight: bold;">Machine Learning Enthusiast</h4>
+        </div>
+        <div class="col-lg-5 content">
+          <h1>I'm Pushpak Vijay Katkhede</h1>
+          <hr>
+          <p>
+            <b>
+              <i>Crafting scalable systems, AI-driven solutions, and clean code for building innovative tech.</i>
+            </b>
           </p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4">
-            <img src="assets/img/profile-img.jpg" class="img-fluid" style="border-radius: 50%;" alt="">
-          </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content">
-            <h3>Software &amp; Machine Learning Engineer</h3>
-            <p class="fst-italic">
-              I have a strong passion for software development and machine learning. I have worked on various projects that
-              involve developing software applications, deploying them on cloud platforms, and implementing machine learning models to solve real-world problems. I have a proven track record of delivering high-quality software solutions and have experience working with various technologies and tools.
-            </p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Pronouns:</strong> <span>He/Him/His</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+1 458 272 8651</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Corvallis, OR, USA</span></li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Major:</strong> <span>Computer Science</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>katkhedepushpak@gmail.com</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Current Status:</strong> <span>Seeking Full-time Role</span></li>
-                </ul>
-              </div>
-            </div>
-            <p>
-              I believe it is vital to implement the theory that you learn in classes to solve real-life problems and I also get excited by seeing what different problems can be put on your plate. I believe my wide spectrum of technical skillset
-              partnered with my experience to
-              communicate with clients would make me a great addition to any team. I am very passionate about the
-              work I am assigned I also strongly believe in the significance of cross-skilling and upskilling as per the
-              business needs of the organization
-            </p>
+          <p>
+            I'm a Master's Graduate from Oregon State University, majoring in Computer Science, with a Bachelor's in Computer Engineering. I have 3 years of professional experience as an AIOps Engineer at IBM and a four-month internship with Tech-Amplifiers.
+          </p>
+          <p>
+            I am passionate about software development and machine learning, with a proven track record of delivering high-quality solutions. I enjoy solving real-world problems and believe in continuous learning and upskilling.
+          </p>
+          <div class="social-links">
+            <strong>Connect with me | </strong>
+            <a href="mailto:katkhedepushpak@gmail.com" class="email" target="_blank"><i class="bx bx-envelope"></i></a>
+            <a href="https://drive.google.com/file/d/1XttuWOK4l6jPEovK7EybzvqX5zuIGMHS/view?usp=sharing" class="resume" target="_blank"><i class="bx bx-file"></i></a>
+            <a href="http://www.linkedin.com/in/pushpakkatkhede" class="linkedin" target="_blank"><i class="bx bxl-linkedin"></i></a>
+            <a href="http://github.com/katkhedepushpak" class="github" target="_blank"><i class="bx bxl-github"></i></a>
+            <a href="http://www.facebook.com/katkhedepushpak/" class="facebook" target="_blank"><i class="bx bxl-facebook"></i></a>
           </div>
         </div>
-
-      </div>
-    </section><!-- End About Section -->
-
-    <!-- ======= Facts Section ======= -->
-    <section id="facts" class="facts">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Summary</h2>
-          <p>“I’ve discovered that every time I’ve reached a milestone I think I’m there, but there’s another there waiting for me.” - Sara Benincasa</p>
-          <p>Here are some my numbers that I believe are milestones of my journey.</p>
-        </div>
-
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6">
-            <div class="count-box">
-              <i class="bi bi-emoji-smile"></i>
-              <span data-purecounter-start="0" data-purecounter-end="3" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Years of Industry Experience</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
-            <div class="count-box">
-              <i class="bi bi-journal-richtext"></i>
-              <span data-purecounter-start="0" data-purecounter-end="12" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Projects</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-            <div class="count-box">
-              <i class="bi bi-headset"></i>
-              <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Certifications</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-            <div class="count-box">
-              <i class="bi bi-award"></i>
-              <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Total Year of Work Experience</p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Facts Section -->
-
-<!-- Skills Section -->
-<section id="skills" class="skills section-bg">
-  <div class="container" data-aos="fade-up">
-    <div class="section-title">
-      <h2>Skills</h2>
-      <p>"Hard skills are important to demonstrate a professional's technical expertise." <br />I have tried to summarize my technical skillset as per my belief</p>
-    </div>
-    <div class="row skills-content">
-      <div class="col-lg-6">
-        <div class="skill-item">
-          <h4>Programming Languages</h4>
-          <span class="skill">Python, R, C, C++, JavaScript, TypeScript</span>
-        </div>
-        <div class="skill-item">
-          <h4>Databases</h4>
-          <span class="skill">MySQL, MongoDB, PostgreSQL</span>
-        </div>
-        <div class="skill-item">
-          <h4>Web Technologies</h4>
-          <span class="skill">HTML/CSS, CNode.js, Express.js, Flask, Django, React, Mongoose, REST API, Web Sockets, RabbitMQ</span>
-        </div>
-        <div class="skill-item">
-          <h4>DevOps</h4>
-          <span class="skill">Kubernetes, Docker, Jenkins CI/CD, Github Actions</span>
-        </div>
-        <div class="skill-item">
-          <h4>Tools</h4>
-          <span class="skill">Git, Swagger, Jira, ServiceNow, Postman, RedHat OpenShift, Grafana, Splunk</span>
-        </div>
-      </div>
-      <div class="col-lg-6">
-        <div class="skill-item">
-          <h4>Libraries</h4>
-          <span class="skill">NumPy, Pandas, SciPy, Scikit-Learn, Matplotlib, Seaborn, PyTorch, NLTK, Folium</span>
-        </div>
-        <div class="skill-item">
-          <h4>Domains</h4>
-          <span class="skill">DevOps, Cloud Services, Machine Learning, Data Analytics, Agile Development, Microservices</span>
-        </div>
-        <div class="skill-item">
-          <h4>Machine Learning Techniques</h4>
-          <span class="skill">Supervised & Unsupervised Algorithms, Optimization techniques, Kernel Methods, Feature Engineering</span>
-        </div>
-
-        <div class="skill-item">
-          <h4>Development Processes</h4>
-          <span class="skill">SDLC, Agile, Microservices Architecture</span>
+        <div class="col-lg-4 content">
+          <br>
+          <h3>Career Highlights</h3>
+          <ul class="no-bullets">
+            <li><i class="bx bx-check"></i> 6 years of programming experience in various languages</li>
+            <li><i class="bx bx-check"></i> Over 3 years of industry experience as Software Engineer.</li>
+            <li><i class="bx bx-check"></i> Engineered multi-stack softwares backed by DevSecOps engineering.</li>
+            <li><i class="bx bx-check"></i> 6+ machine learning projects in multi-discipline applications.</li>
+            <li><i class="bx bx-check"></i> 4 industry-recognized professional certifications.</li>
+          </ul>
         </div>
       </div>
     </div>
-  </div>
-</section>
-<!-- End of Skills Section -->
- 
-<!-- START THE FEATURETTES -->
+  </section><!-- End Intro Section -->
+
+  <!-- ======= Skills Section ======= -->
+  <section id="skills" class="skills section-bg">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title">
+        <h2>Skills</h2>
+        <p>"Hard skills are important to demonstrate a professional's technical expertise." <br />I have tried to summarize my technical skillset as per my belief.</p>
+      </div>
+
+      <div class="row">
+        <!-- Left Column -->
+        <div class="col-lg-6">
+          <div class="timeline">
+            <!-- Skill 1 -->
+            <div class="timeline-item">
+              <div class="timeline-icon"><i class="bx bx-code-alt"></i></div>
+              <div class="timeline-content">
+                <h4>Programming Languages</h4>
+                <p>Python, JavaScript, Golang, Java, TypeScript, C++, HTML, Shell</p>
+              </div>
+            </div>
+
+            <!-- Skill 2 -->
+            <div class="timeline-item">
+              <div class="timeline-icon"><i class="bx bx-data"></i></div>
+              <div class="timeline-content">
+                <h4>Databases</h4>
+                <p>SQL (MySQL, PostgreSQL, Oracle), NoSQL (MongoDB, AWS DynamoDB)</p>
+              </div>
+            </div>
+
+            <!-- Skill 3 -->
+            <div class="timeline-item">
+              <div class="timeline-icon"><i class="bx bx-world"></i></div>
+              <div class="timeline-content">
+                <h4>Web & Frameworks</h4>
+                <p>React.js, Node.js, Express.js, Spring Boot, Flask, Redux, CSS</p>
+              </div>
+            </div>
+
+            <!-- Skill 4 -->
+            <div class="timeline-item">
+              <div class="timeline-icon"><i class="bx bx-cloud"></i></div>
+              <div class="timeline-content">
+                <h4>Cloud and DevOps</h4>
+                <p>Docker, Kubernetes, Jenkins, Terraform, OpenShift, AWS EKS, ECS, Lambda, SQS</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="col-lg-6">
+          <div class="timeline">
+            <!-- Skill 5 -->
+            <div class="timeline-item">
+              <div class="timeline-icon"><i class="bx bx-brain"></i></div>
+              <div class="timeline-content">
+                <h4>Libraries</h4>
+                <p>NumPy, Pandas, PyTorch, TensorFlow, TensorBoard, GenAI LLMs</p>
+              </div>
+            </div>
+
+            <!-- Skill 6 -->
+            <div class="timeline-item">
+              <div class="timeline-icon"><i class="bx bx-wrench"></i></div>
+              <div class="timeline-content">
+                <h4>Tools</h4>
+                <p>Git, GitHub, Jira, ServiceNow, Splunk, Postman, IntelliJ, YAML, Linux</p>
+              </div>
+            </div>
+
+            <!-- Skill 7 -->
+            <div class="timeline-item">
+              <div class="timeline-icon"><i class="bx bx-layer"></i></div>
+              <div class="timeline-content">
+                <h4>Development Practices</h4>
+                <p>Agile, Object-Oriented Design, SDLC, TDD, Microservices, SOA, Distributed Systems</p>
+              </div>
+            </div>
+
+            <!-- Skill 8: Machine Learning -->
+            <div class="timeline-item">
+              <div class="timeline-icon"><i class="bx bx-bar-chart-alt"></i></div>
+              <div class="timeline-content">
+                <h4>Machine Learning</h4>
+                <p>Model Fine-tuning, Time-Series Forecasting, Tokenization, Langchains, LLMs, Model Compression, CNN, RNN</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- End Skills Section -->
+
+  <!-- START THE FEATURETTES -->
 <section id="projects" class="portfolio section-bg">
   <div class="container" data-aos="fade-up">
     <div class="section-title">
       <h2>Projects</h2>
-      <p>"It's not the ideas; it's design, implementation and hard work that make the difference." - Michael Abrash</p>
+      <p>"It's not the ideas; it's design, implementation, and hard work that make the difference." - Michael Abrash</p>
     </div>
 
-    <!-- Project 1: LATS -->
-    <div class="container" data-aos="fade-up" style="text-align: justify; text-justify: inter-word;">
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">LATS<span class="text-muted"></span></h2>
-          <p class="lead">Live Assistance and Tracking System</p>
-          <hr>
-          <h4>IDEA</h4>
-          <p>
-            Current socio-economic situations around the world have seen a drastic rise in crime rate, making it difficult for authorities to control. Our system emphasizes stopping crime before it is committed by ensuring the safety of individuals and saving resources. This system provides live assistance during emergencies by deploying a special armed task force to handle dangerous situations before they escalate.
-          </p>
-          <h4>Accomplishment</h4>
-          <ul>
-            <li>System that establishes contact between the victim and the nearest police resource through a small device.</li>
-            <li>Handles impatient/panicked behavior to prevent misuse.</li>
-            <li>Enables police to reach the victim quickly by tracking their location.</li>
-          </ul>
-          <h4>Paper Citation</h4>
-          <p>
-            Katkhede, P. & Todmal, V. & Pandey, D. & Saini, A. & Patil, B.A.. (2019). Live Assistance And Tracking System(LATS) using Cloud and IoT. International Journal of Computer Sciences and Engineering. 7. 749-751. DOI: 10.26438/ijcse/v7i1.749751.
-          </p>
-        </div>
-        <div class="col-md-5">
-          <div class="mx-auto" align="center">
-            <img src="assets/img/logo-black.png" alt="" style="height: 500px; margin-top: 70px;">
-            <br><br>
-            <a href="https://github.com/katkhedepushpak/LATS" target="_blank">
-              <button type="button" class="btn btn-outline-dark">Source Code</button>
-            </a>
-            |
-            <a href="https://www.ijcseonline.org/pdf_paper_view.php?paper_id=3578&125-IJCSE-05702.pdf" target="_blank">
-              <button type="button" class="btn btn-outline-dark">Journal Paper</button>
-            </a>
+    <div class="row">
+      <!-- Project 1: Defects4REST -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="project-card">
+          <div class="card-img">
+            <img src="assets/img/defects4rest.png" alt="Defects4REST">
           </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Project 2: Predicting Silicon (Si) Levels in Rivers using LSTM -->
-    <div class="container" data-aos="fade-up" style="text-align: justify; text-justify: inter-word; margin-top: 50px;">
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Silicon Level Forecasting using LSTM<span class="text-muted"></span></h2>
-          <p class="lead">Predicting Si Levels in Rivers for Marine Diatoms' Survival</p>
-          <hr>
-          <h4>Abstract</h4>
-          <p>
-            This project aims to forecast silicon (Si) levels in rivers using LSTM (Long Short-Term Memory) networks. Silicon is a crucial nutrient for marine diatoms, essential for one-fourth of global primary production. Our LSTM model analyzes aquatic, ecological, and climatic parameters to predict Si levels, offering insights into nutrient processing in rivers.
-          </p>
-          <h4>Accomplishment</h4>
-          <ul>
-            <li>Developed an LSTM-based model to predict Si levels from time-series data.</li>
-            <li>Integrated climate and ecological variables to enhance prediction accuracy.</li>
-            <li>Provided valuable insights for marine ecosystem conservation and climate change mitigation.</li>
-            <li>Explored the idea of having historical significance in the Si values through time-series setup.</li>
-          </ul>
-          <h4>Research Motivation</h4>
-          <p>
-            Climate change is disrupting nutrient cycles, making accurate predictions vital for maintaining ecosystem balance. This project fills a gap by applying LSTM networks to predict riverine Si levels, which is essential for sustaining marine life, especially diatoms.
-          </p>
-        </div>
-        <div class="col-md-5">
-          <div class="mx-auto" align="center">
-            <img src="assets/img/res_si.png" alt="LSTM Model" style="height: 400px; margin-top: 150px;">
-            <br><br>
-            <a href="assets/code/si/" target="_blank">
-              <button type="button" class="btn btn-outline-dark">Source Code</button>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Project 3: ETHICAL ANALYSIS OF MEDIA RECOMMENDERS -->
-    <div class="container" data-aos="fade-up" style="text-align: justify; text-justify: inter-word; margin-top: 50px;">
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Ethical Analysis of Media Recommenders<span class="text-muted"></span></h2>
-          <p class="lead">Social and Ethical Implications of Algorithm-Driven Media Recommendations</p>
-          <hr>
-          <h4>Executive Summary</h4>
-          <p>
-            With the rapid development of technology, algorithmic recommendation systems have become crucial to online media consumption. This project explores the ethical complexities of these systems, focusing on platforms like Netflix, YouTube, Instagram, and Reddit. These algorithms enhance user experience but also pose ethical challenges, particularly regarding their influence on users, content creators, and society.
-          </p>
-          <h4>Accomplishment</h4>
-          <ul>
-            <li>Analyzed ethical concerns of personalization algorithms on social media and streaming platforms.</li>
-            <li>Explored accountability in AI-based systems, discussing issues like algorithmic transparency and user impact.</li>
-            <li>Provided recommendations for policymakers and developers to mitigate ethical risks.</li>
-            <li>Reviewed novel techniques like collaborative filtering and attention mechanisms to improve system explainability.</li>
-          </ul>
-          <h4>Research Focus</h4>
-          <p>
-            This project calls for greater accountability and ethical reflection on media recommendation systems. By emphasizing transparency and user control, the research highlights the need for balancing innovation with responsibility in the digital age.
-          </p>
-        </div>
-        <div class="col-md-5">
-          <div class="mx-auto" align="center">
-            <img src="assets/img/media-rec.png" alt="Ethical Media Recommenders" style="height: 400px; margin-top: 150px; margin-left: 40px;">
-            <br><br>
-            <div align="center">
-
-              <a href="assets/pdf/Final_repv2.pdf" target="_blank">
-                <button type="button" class="btn btn-outline-dark">Analysis Report</button>
-              </a>   |   
-              <a href="assets/pdf/pub_del.pdf" target="_blank">
-                <button type="button" class="btn btn-outline-dark">Public Engagement Deliverable</button>
-              </a>
+          <div class="card-body">
+            <h5 class="card-title">Defects4REST</h5>
+            <p class="card-text">
+              Introduced Defects4REST, the first public benchmark of REST API defects systematically mined from open-source repositories. Using a semi-automated approach with NLP techniques and manual validation, the project classifies defects into a novel taxonomy of categories. 
+            </p>
+            <div class="card-area"><strong>Tags:</strong> NLP, LLMs</div>
+            <div class="btn-container">
+              <span class="btn btn-light" disabled>Ongoing Effort</span>
             </div>
           </div>
-          
+        </div>
+      </div>
+
+      <!-- Project 2: Silicon Analysis -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="project-card">
+          <div class="card-img">
+            <img src="assets/img/silicon.png" alt="Silicon Analysis">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Si Level Forecaster</h5>
+            <p class="card-text">
+              Applied machine learning techniques to analyze silicon concentration in rivers, improving accuracy by 22%. Collaborated with domain experts to validate insights and enhance ecological understanding.
+            </p>
+            <div class="card-area"><strong>Tags:</strong> Deep Learning</div>
+            <div class="btn-container">
+              <a href="https://github.com/katkhedepushpak/silicon-analysis-lstm" target="_blank" class="btn btn-secondary">Source Code</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3: Jot-It-Down -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="project-card">
+          <div class="card-img">
+            <img src="assets/img/jot-it-down.png" alt="Jot-It-Down">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Jot-It-Down</h5>
+            <p class="card-text">
+              A cloud-based interactive app built with the MERN stack, enabling users to securely manage notes, reminders, and themes with JWT authentication.
+            </p>
+            <div class="card-area"><strong>Tags:</strong> MERN, Web Development</div>
+            <div class="btn-container">
+              <a href="https://github.com/katkhedepushpak/Jot-it-Down" target="_blank" class="btn btn-secondary">Source Code</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4: LATS -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="project-card">
+          <div class="card-img">
+            <img src="assets/img/lats.png" alt="LATS">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">LATS</h5>
+            <p class="card-text">
+              A multi-tier GPS-based solution for emergency response, reducing response time to under 45 seconds. Optimized police force deployment using classification techniques, cutting response time by over 50%.
+            </p>
+            <div class="card-area"><strong>Tags:</strong> IoT, Machine Learning</div>
+            <div class="btn-container">
+              <a href="https://github.com/katkhedepushpak/LATS" target="_blank" class="btn btn-secondary">Source Code</a>
+              <a href="https://www.ijcseonline.org/pdf_paper_view.php?paper_id=3578&125-IJCSE-05702.pdf" target="_blank" class="btn btn-light">Journal Paper</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 5: Bandit Joins -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="project-card">
+          <div class="card-img">
+            <img src="assets/img/bandit-joins.png" alt="Bandit Joins">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Bandit Joins</h5>
+            <p class="card-text">
+              Modified PostgreSQL source code for join operations, reducing execution time by over 30%. Automated ETL processes for large-scale databases and optimized join operations.
+            </p>
+            <div class="card-area"><strong>Tags:</strong> Database Optimization</div>
+            <div class="btn-container">
+              <span class="btn btn-light" disabled>Research Project</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 6: NewsDash -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="project-card">
+          <div class="card-img">
+            <img src="assets/img/newsdash.png" alt="NewsDash">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">NewsDash</h5>
+            <p class="card-text">
+              Built a React.js web portal serving curated news articles, providing users with a personalized experience.
+            </p>
+            <div class="card-area"><strong>Tags:</strong> Web Development</div>
+            <div class="btn-container">
+              <a href="https://github.com/katkhedepushpak/news-dash/" target="_blank" class="btn btn-secondary">Source Code</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 7: Bank Campaign -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="project-card">
+          <div class="card-img">
+            <img src="assets/img/bank.png" alt="Bank Telemarketing">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Bank Telemarket Analyzer</h5>
+            <p class="card-text">
+              Developed a predictive system to forecast lead conversions for term deposits. Achieved 96.73% recall using cost-sensitive learning with penalized SVC and Random Forest classifiers.
+            </p>
+            <div class="card-area"><strong>Tags:</strong> Machine Learning</div>
+            <div class="btn-container">
+              <a href="https://github.com/katkhedepushpak/Bank-Telemarketing-Campaign" target="_blank" class="btn btn-secondary">Source Code</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 8: Lab Progress Tracker -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="project-card">
+          <div class="card-img">
+            <img src="assets/img/research-manager.png" alt="Research Productivity Manager">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Lab Progress Tracker</h5>
+            <p class="card-text">
+              Developed a Research Lab Management application using Vue.js, Spring Boot, and PostgreSQL, simplifying well-organized logging of progress timelines, outcomes, and feedback while ensuring secure role-based access policies.
+            </p>
+            <div class="card-area"><strong>Tags:</strong> Application Development, DevOps</div>
+            <div class="btn-container">
+              <span class="btn btn-light" disabled>Private Project</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 9: Medical Dataset Augmentation -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="project-card">
+          <div class="card-img">
+            <img src="assets/img/medical-gan.png" alt="Medical Dataset Augmentation">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Medical Dataset Augmentation</h5>
+            <p class="card-text">
+              Engineered GANs to augment a skin lesion dataset, increasing training samples by 180%. Improved classification accuracy by resolving class imbalance and reducing model bias, enhancing real-world applicability.
+            </p>
+            <div class="card-area"><strong>Tags:</strong> Deep Learning</div>
+            <div class="btn-container">
+              <span class="btn btn-light" disabled>Research Project</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 10: Neighborhood Recommender -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="project-card">
+          <div class="card-img">
+            <img src="assets/img/neighborhood.png" alt="Battle for Better Neighborhood">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Neighborhood Recommender</h5>
+            <p class="card-text">
+              Developed a data-driven approach to neighborhood recommendation using clustering algorithms like K-means and DBSCAN. Enhanced understanding of neighborhood characteristics to address resident preferences.
+            </p>
+            <div class="card-area"><strong>Tags:</strong> Machine Learning, Data Science</div>
+            <div class="btn-container">
+              <a href="https://github.com/katkhedepushpak/Toronto-clustering-segmentation" target="_blank" class="btn btn-secondary">Source Code</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 11: CrackStation MVP -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="project-card">
+          <div class="card-img">
+            <img src="assets/img/crackstation.png" alt="CrackStation">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">CrackStation MVP</h5>
+            <p class="card-text">
+              Developed a library to decrypt passwords encrypted with SHA-256 algorithms. Implemented a public API for seamless integration, documented with Swagger.
+            </p>
+            <div class="card-area"><strong>Tags:</strong> Cybersecurity</div>
+            <div class="btn-container">
+              <a href="https://github.com/katkhedepushpak/CrackStationAsService" target="_blank" class="btn btn-secondary">Source Code</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-
   </div>
 </section>
+
 <!-- /END THE FEATURETTES -->
 
 
@@ -386,17 +595,6 @@
 
     <div class="row">
       <div class="col-lg-6">
-        <!-- <h3 class="resume-title">Summary</h3> -->
-        <!-- <div class="resume-item pb-0">
-          <h4>Pushpak Vijay Katkhede</h4>
-          <p><em>Self-motivated and result-driven master’s student with 3 years of professional experience in DevOps, Cloud, and Data Science. Passionate about developing innovative solutions with strong analytical and problem-solving skills.</em></p>
-          <ul>
-            <li>Corvallis, OR</li>
-            <li>(458) 272-8651</li>
-            <li>katkhedepushpak@gmail.com | Portfolio | LinkedIn | GitHub</li>
-          </ul>
-        </div> -->
-
         <h3 class="resume-title">Education</h3>
         <div class="resume-item">
           <h4>Master of Science in Computer Science</h4>
@@ -415,40 +613,29 @@
       <div class="col-lg-6">
         <h3 class="resume-title">Professional Experience</h3>
 
+        <!-- New Position: Research Assistant -->
+        <div class="resume-item">
+          <h4>Research Assistant</h4>
+          <h5>Dec 2024 – Present</h5>
+          <p><em>ANSWER LAB, Oregon State University, Corvallis, OR</em></p>
+        </div>
+
         <div class="resume-item">
           <h4>Graduate Teaching Assistant</h4>
           <h5>Jan 2023 – June 2024</h5>
           <p><em>Oregon State University, Corvallis, OR</em></p>
-          <!-- <ul>
-            <li>Mentored 126 students to analyze, test, fix bugs, and contribute to OSS licensed software.</li>
-            <li>Trained students in mastering GitHub, delivering training on version control, collaborative coding, workflows, and resolving merge conflicts.</li>
-            <li>Assisted students in building full-stack MERN applications, showcasing integration and leveraging various technologies.</li>
-          </ul> -->
         </div>
 
         <div class="resume-item">
-          <h4>Application Developer - DevOps</h4>
+          <h4>Application Developer - DevOps</h5>
           <h5>Oct 2019 – July 2022</h5>
           <p><em>IBM, Bangalore, India</em></p>
-          <!-- <ul>
-            <li>Built Chat Summarization application using cloud-based NLP models, moderating read time by 75%.</li>
-            <li>Designed virtual dispatchers improving system availability by 23%, saving $75,000 in SLA penalties monthly.</li>
-            <li>Led a team of 7 engineers in integrating 4 applications for metrics projection and dashboard instrumentation.</li>
-            <li>Performed case studies of 20+ client architectures, providing solutioning presentations, deployment plans, and risk mitigation.</li>
-            <li>Implemented "DevOps Commander" for seamless Kubernetes and Docker operations via chat commands on Slack.</li>
-            <li>Programmed “IT-Control-Tower” to bundle orchestration scripts for deployment of tools and environment setup using Infrastructure as Code (IaC), triggering setups in under 3 seconds.</li>
-          </ul> -->
         </div>
 
         <div class="resume-item">
-          <h4>Data Science Intern</h4>
+          <h4>Data Science Intern</h5>
           <h5>July 2019 – Oct 2019</h5>
           <p><em>TechAmplifiers, Pune, India</em></p>
-          <!-- <ul>
-            <li>Implemented Python scripts for data loading, preprocessing, and model accuracy evaluation.</li>
-            <li>Created visualizations using Seaborn and Matplotlib to identify trends and patterns in business data.</li>
-            <li>Analyzed business data, providing insights to optimize productivity and develop solutions for business problems.</li>
-          </ul> -->
         </div>
       </div>
     </div>
