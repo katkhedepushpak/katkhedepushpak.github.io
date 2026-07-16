@@ -30,6 +30,9 @@
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
 
+    <!-- Devicons (tech stack icons) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
     <style>
     .bd-placeholder-img {
       font-size: 1.125rem;
@@ -96,7 +99,7 @@
       align-items: center;
       margin-bottom: 10px; /* Adds spacing between items */
     }
-s
+
     .no-bullets i {
       color: green; /* Optional: Change the color of the check icon */
       margin-right: 10px; /* Adds spacing between the icon and text */
@@ -203,6 +206,131 @@ s
       gap: 5px; /* Adds spacing between buttons */
     }
   </style>
+    <style>
+    /* ---- Open-to-work chip ---- */
+    .otw-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #e8f5e9;
+      color: #2e7d32;
+      border: 1.5px solid #81c784;
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+    .otw-chip .dot {
+      width: 9px;
+      height: 9px;
+      background: #43a047;
+      border-radius: 50%;
+      animation: pulse-dot 1.5s infinite;
+    }
+    @keyframes pulse-dot {
+      0%   { box-shadow: 0 0 0 0 rgba(67,160,71,0.5); }
+      70%  { box-shadow: 0 0 0 7px rgba(67,160,71,0); }
+      100% { box-shadow: 0 0 0 0 rgba(67,160,71,0); }
+    }
+
+    /* ---- Publication banner ---- */
+    .pub-section { padding: 16px 0; background: #fff; }
+    .pub-banner {
+      background: linear-gradient(135deg, #1a3a6b 0%, #2563a8 100%);
+      color: #fff;
+      padding: 18px 28px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      box-shadow: 0 4px 18px rgba(26,58,107,0.28);
+    }
+    .pub-badge {
+      background: #fff;
+      color: #1a3a6b;
+      font-weight: 700;
+      font-size: 12px;
+      padding: 5px 11px;
+      border-radius: 5px;
+      white-space: nowrap;
+      letter-spacing: .4px;
+    }
+    .pub-text { flex: 1; min-width: 200px; }
+    .pub-text p { margin: 0; }
+    .pub-title { font-size: 15px; font-weight: 700; }
+    .pub-venue { font-size: 12px; opacity: .85; margin-top: 3px !important; }
+    .pub-link {
+      background: rgba(255,255,255,0.18);
+      color: #fff;
+      border: 1.5px solid rgba(255,255,255,0.5);
+      padding: 6px 16px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background .2s;
+    }
+    .pub-link:hover { background: rgba(255,255,255,0.32); color: #fff; }
+
+    /* ---- Tech icon grid ---- */
+    .tech-icon-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 8px;
+    }
+    .tech-icon-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      width: 52px;
+    }
+    .tech-icon-item i { font-size: 30px; }
+    .tech-icon-item span {
+      font-size: 10px;
+      text-align: center;
+      color: #555;
+      line-height: 1.2;
+    }
+    .tech-tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .tech-tag {
+      background: #e9ecef;
+      color: #333;
+      border-radius: 12px;
+      padding: 3px 10px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    /* ---- Resume embed ---- */
+    .resume-embed-wrap {
+      width: 100%;
+      height: 680px;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+    }
+
+    /* ---- Project modal ---- */
+    .modal-tech-tag {
+      display: inline-block;
+      background: #e3f2fd;
+      color: #1565c0;
+      border-radius: 10px;
+      padding: 2px 10px;
+      font-size: 12px;
+      margin: 2px;
+    }
+  </style>
   </head>
 
   <body>
@@ -219,10 +347,9 @@ s
                   class="bx bxs-terminal"></i> <span>Projects</span></a></li>
           <li><a href="#resume" class="nav-link scrollto"><i
                 class="bx bx-trip"></i> <span>Journey</span></a></li>
+          <li><a href="#resume-view" class="nav-link scrollto"><i
+                class="bx bx-file-blank"></i> <span>Resume</span></a></li>
 
-          <li><a href="#services" class="nav-link scrollto"><i
-                class="bx bx-certification"></i>
-              <span>Credentials</span></a></li>
 
         </ul>
       </nav>
@@ -238,40 +365,43 @@ s
             <hr>
             <h4 style="text-align: center; font-weight: bold;">Software
               Engineer</h4>
-            <h4 style="text-align: center; font-weight: bold;">Machine Learning
-              Enthusiast</h4>
+            <h4 style="text-align: center; font-weight: bold;">Full-Stack, Backend &amp; Cloud</h4>
+            <div style="text-align:center;">
+              <span class="otw-chip"><span class="dot"></span> Open to Work</span>
+            </div>
           </div>
           <div class="col-lg-5 content" style="text-align: justify; border-right: 1px solid #ccc;">
             <h1>I'm Pushpak Vijay Katkhede</h1>
             <hr>
             <p>
               <b>
-                <i>Crafting scalable systems and AI-driven solutions with clean
-                  code for building innovative tech.</i>
+                <i>Building backend services, cloud platforms, and AI-driven
+                  systems that scale — from REST APIs to RAG pipelines.</i>
               </b>
-
             </p>
             <p>
-              I am currently looking for full-time roles in Software Engineering
-              and Machine Learning in the USA.
-
-            </p>
-
-            <p>
-              I'm a Master's Graduate from Oregon State University, majored in
-              Computer Science, and coursework focused in Artificial
-              Intelligence. I have 3 years of professional experience as a
-              Software Engineer at IBM and a four-month internship with
-              Tech-Amplifiers.
+              I am currently looking for full-time Software Engineering roles
+              (full-stack, backend, and cloud) in the USA.
+              <strong>Authorized to work in the US on F1 STEM OPT.</strong>
             </p>
             <p>
-              I'm currently involved in a research effort with <a href="https://mmotwani.com" target="_blank">Dr. Manish Motwani</a>, working on a project that aims to analyze how effective are the modern ML-based REST API testing and debugging techniques in detecting real-world defects.
+              I'm currently a <strong>Software Engineer at Oregon State University</strong>
+              and a Master's graduate in Computer Science from OSU. Before this role,
+              I worked as a Research Assistant under
+              <a href="https://mmotwani.com" target="_blank">Dr. Manish Motwani</a>
+              at the ANSWER Lab, where my work on real-world REST API defect analysis
+              led to a publication at <strong>ICSE 2026 (ACM/IEEE)</strong>.
             </p>
             <p>
-              I am passionate about software development and machine learning,
-              with a proven track record of delivering high-quality solutions. I
-              enjoy solving real-world problems and believe in continuous
-              learning and upskilling.
+              Prior to graduate school, I spent <strong>3 years as a Software Engineer
+              at IBM</strong>, building enterprise microservices, cloud-native
+              automation platforms, and observability tooling that served 500K+ users
+              and contributed to $3M in signed contracts.
+            </p>
+            <p>
+              Outside work I enjoy solving DS&amp;A problems, exploring GenAI tooling,
+              and contributing to open-source. Open to remote or relocation anywhere
+              in the US.
             </p>
             <div class="social-links">
               <strong>Connect with me | </strong>
@@ -307,7 +437,7 @@ s
             <p style="margin-top: 20px;">
               <strong>Download Full Resume</strong>
               <a
-                href="https://drive.google.com/file/d/1XttuWOK4l6jPEovK7EybzvqX5zuIGMHS/view?usp=sharing"
+                href="assets/resume/pushpak_katkhede_resume.pdf"
                 target="_blank" class="btn btn-outline-dark"
                 style="margin-left: 10px;">
                 Click Here <i class="bx bx-right-arrow-alt"></i>
@@ -317,6 +447,21 @@ s
         </div>
       </div>
     </section><!-- End Intro Section -->
+
+    <!-- ======= Publication Banner ======= -->
+    <div class="pub-section">
+      <div class="container" data-aos="fade-up">
+        <div class="pub-banner">
+          <span class="pub-badge">&#127891; ACM / IEEE &bull; ICSE 2026</span>
+          <div class="pub-text">
+            <p class="pub-title">Defects4REST: A Benchmark of Real-World REST API Defects</p>
+            <p class="pub-venue">International Conference on Software Engineering &bull; Peer-reviewed &bull; Published Author</p>
+          </div>
+          <a href="#projects" class="pub-link">View Project &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <!-- ======= End Publication Banner ======= -->
 
     <!-- ======= Skills Section ======= -->
     <section id="skills" class="skills section-bg">
@@ -334,8 +479,15 @@ s
                 <div class="timeline-icon"><i class="bx bx-code-alt"></i></div>
                 <div class="timeline-content">
                   <h4>Programming Languages</h4>
-                  <p>Python, JavaScript, Golang, Java, TypeScript, C++, HTML,
-                    Shell</p>
+                  <div class="tech-icon-grid">
+                    <div class="tech-icon-item"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+                    <div class="tech-icon-item"><i class="devicon-java-plain colored"></i><span>Java</span></div>
+                    <div class="tech-icon-item"><i class="devicon-cplusplus-plain colored"></i><span>C++</span></div>
+                    <div class="tech-icon-item"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+                    <div class="tech-icon-item"><i class="devicon-typescript-plain colored"></i><span>TypeScript</span></div>
+                    <div class="tech-icon-item"><i class="devicon-bash-plain colored"></i><span>Bash</span></div>
+                    <div class="tech-icon-item"><i class="devicon-html5-plain colored"></i><span>HTML</span></div>
+                  </div>
                 </div>
               </div>
 
@@ -344,8 +496,13 @@ s
                 <div class="timeline-icon"><i class="bx bx-data"></i></div>
                 <div class="timeline-content">
                   <h4>Databases</h4>
-                  <p>SQL (MySQL, PostgreSQL, Oracle), NoSQL (MongoDB, AWS
-                    DynamoDB)</p>
+                  <div class="tech-icon-grid">
+                    <div class="tech-icon-item"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
+                    <div class="tech-icon-item"><i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span></div>
+                    <div class="tech-icon-item"><i class="devicon-oracle-original colored"></i><span>Oracle</span></div>
+                    <div class="tech-icon-item"><i class="devicon-mongodb-plain colored"></i><span>MongoDB</span></div>
+                    <div class="tech-icon-item"><i class="devicon-dynamodb-plain colored"></i><span>DynamoDB</span></div>
+                  </div>
                 </div>
               </div>
 
@@ -353,9 +510,15 @@ s
               <div class="timeline-item">
                 <div class="timeline-icon"><i class="bx bx-world"></i></div>
                 <div class="timeline-content">
-                  <h4>Web & Frameworks</h4>
-                  <p>React.js, Node.js, Express.js, Spring Boot, Flask, Redux,
-                    CSS</p>
+                  <h4>Web &amp; Frameworks</h4>
+                  <div class="tech-icon-grid">
+                    <div class="tech-icon-item"><i class="devicon-react-original colored"></i><span>React</span></div>
+                    <div class="tech-icon-item"><i class="devicon-nodejs-plain colored"></i><span>Node.js</span></div>
+                    <div class="tech-icon-item"><i class="devicon-express-original colored"></i><span>Express</span></div>
+                    <div class="tech-icon-item"><i class="devicon-fastapi-plain colored"></i><span>FastAPI</span></div>
+                    <div class="tech-icon-item"><i class="devicon-flask-original colored"></i><span>Flask</span></div>
+                    <div class="tech-icon-item"><i class="devicon-redux-original colored"></i><span>Redux</span></div>
+                  </div>
                 </div>
               </div>
 
@@ -364,8 +527,15 @@ s
                 <div class="timeline-icon"><i class="bx bx-cloud"></i></div>
                 <div class="timeline-content">
                   <h4>Cloud and DevOps</h4>
-                  <p>Docker, Kubernetes, Jenkins, Terraform, OpenShift, AWS EKS,
-                    ECS, Lambda, SQS</p>
+                  <div class="tech-icon-grid">
+                    <div class="tech-icon-item"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
+                    <div class="tech-icon-item"><i class="devicon-kubernetes-plain colored"></i><span>Kubernetes</span></div>
+                    <div class="tech-icon-item"><i class="devicon-jenkins-line colored"></i><span>Jenkins</span></div>
+                    <div class="tech-icon-item"><i class="devicon-terraform-plain colored"></i><span>Terraform</span></div>
+                    <div class="tech-icon-item"><i class="devicon-openshift-plain colored"></i><span>OpenShift</span></div>
+                    <div class="tech-icon-item"><i class="devicon-amazonwebservices-plain-wordmark colored"></i><span>AWS</span></div>
+                    <div class="tech-icon-item"><i class="devicon-azure-plain colored"></i><span>Azure</span></div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -379,8 +549,17 @@ s
                 <div class="timeline-icon"><i class="bx bx-brain"></i></div>
                 <div class="timeline-content">
                   <h4>Libraries</h4>
-                  <p>NumPy, Pandas, PyTorch, TensorFlow, TensorBoard, GenAI
-                    LLMs</p>
+                  <div class="tech-icon-grid">
+                    <div class="tech-icon-item"><i class="devicon-numpy-original colored"></i><span>NumPy</span></div>
+                    <div class="tech-icon-item"><i class="devicon-pandas-original colored"></i><span>Pandas</span></div>
+                    <div class="tech-icon-item"><i class="devicon-pytorch-original colored"></i><span>PyTorch</span></div>
+                    <div class="tech-icon-item"><i class="devicon-tensorflow-original colored"></i><span>TensorFlow</span></div>
+                  </div>
+                  <div class="tech-tag-list" style="margin-top:8px;">
+                    <span class="tech-tag">LangChain</span>
+                    <span class="tech-tag">GenAI / LLMs</span>
+                    <span class="tech-tag">RAG</span>
+                  </div>
                 </div>
               </div>
 
@@ -389,8 +568,19 @@ s
                 <div class="timeline-icon"><i class="bx bx-wrench"></i></div>
                 <div class="timeline-content">
                   <h4>Tools</h4>
-                  <p>Git, GitHub, Jira, ServiceNow, Splunk, Postman, IntelliJ,
-                    YAML, Linux</p>
+                  <div class="tech-icon-grid">
+                    <div class="tech-icon-item"><i class="devicon-git-plain colored"></i><span>Git</span></div>
+                    <div class="tech-icon-item"><i class="devicon-github-original colored"></i><span>GitHub</span></div>
+                    <div class="tech-icon-item"><i class="devicon-jira-plain colored"></i><span>Jira</span></div>
+                    <div class="tech-icon-item"><i class="devicon-postman-plain colored"></i><span>Postman</span></div>
+                    <div class="tech-icon-item"><i class="devicon-linux-plain colored"></i><span>Linux</span></div>
+                    <div class="tech-icon-item"><i class="devicon-intellij-plain colored"></i><span>IntelliJ</span></div>
+                  </div>
+                  <div class="tech-tag-list" style="margin-top:8px;">
+                    <span class="tech-tag">ServiceNow</span>
+                    <span class="tech-tag">Splunk</span>
+                    <span class="tech-tag">YAML</span>
+                  </div>
                 </div>
               </div>
 
@@ -399,8 +589,16 @@ s
                 <div class="timeline-icon"><i class="bx bx-layer"></i></div>
                 <div class="timeline-content">
                   <h4>Development Practices</h4>
-                  <p>Agile, Object-Oriented Design, SDLC, TDD, Microservices,
-                    SOA, Distributed Systems</p>
+                  <div class="tech-tag-list">
+                    <span class="tech-tag">Agile</span>
+                    <span class="tech-tag">Scrum</span>
+                    <span class="tech-tag">TDD</span>
+                    <span class="tech-tag">OOP</span>
+                    <span class="tech-tag">Microservices</span>
+                    <span class="tech-tag">Distributed Systems</span>
+                    <span class="tech-tag">REST API Design</span>
+                    <span class="tech-tag">CI/CD</span>
+                  </div>
                 </div>
               </div>
 
@@ -410,8 +608,15 @@ s
                     class="bx bx-bar-chart-alt"></i></div>
                 <div class="timeline-content">
                   <h4>Machine Learning</h4>
-                  <p>Model Fine-tuning, Time-Series Forecasting, Tokenization,
-                    Langchains, LLMs, Model Compression, CNN, RNN</p>
+                  <div class="tech-tag-list">
+                    <span class="tech-tag">RAG</span>
+                    <span class="tech-tag">Embeddings</span>
+                    <span class="tech-tag">Vector Search</span>
+                    <span class="tech-tag">LLMs</span>
+                    <span class="tech-tag">Fine-tuning</span>
+                    <span class="tech-tag">NLP</span>
+                    <span class="tech-tag">CNN / RNN</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -430,6 +635,26 @@ s
         </div>
 
         <div class="row">
+          <!-- Project: Ask chAMP! -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="project-card">
+              <div class="card-body">
+                <h5 class="card-title">Ask chAMP! (RAG Chatbot)</h5>
+                <p class="card-text">
+                  Built a Retrieval-Augmented Generation chatbot with
+                  multi-source ingestion and persistent vector caching, using a
+                  vector database for semantic retrieval and the Claude API for
+                  grounded response generation over enterprise documentation.
+                </p>
+                <div class="card-area"><strong>Tags:</strong> GenAI, RAG, LLMs</div>
+                <div class="btn-container">
+                  <span class="btn btn-light" disabled>Enterprise Project</span>
+                  <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalAskChamp">Details</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <!-- Project 1: Defects4REST -->
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="project-card">
@@ -448,6 +673,7 @@ s
                 <div class="card-area"><strong>Tags:</strong> NLP, LLMs</div>
                 <div class="btn-container">
                   <span class="btn btn-light" disabled>Ongoing Effort</span>
+                  <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalDefects4REST">Details</button>
                 </div>
               </div>
             </div>
@@ -467,12 +693,10 @@ s
                   Collaborated with domain experts to validate insights and
                   enhance ecological understanding.
                 </p>
-                <div class="card-area"><strong>Tags:</strong> Deep
-                  Learning</div>
+                <div class="card-area"><strong>Tags:</strong> Deep Learning</div>
                 <div class="btn-container">
-                  <a
-                    href="https://github.com/katkhedepushpak/silicon-analysis-lstm"
-                    target="_blank" class="btn btn-secondary">Source Code</a>
+                  <a href="https://github.com/katkhedepushpak/silicon-analysis-lstm" target="_blank" class="btn btn-secondary">Source Code</a>
+                  <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalSilicon">Details</button>
                 </div>
               </div>
             </div>
@@ -491,11 +715,10 @@ s
                   enabling users to securely manage notes, reminders, and themes
                   with JWT authentication.
                 </p>
-                <div class="card-area"><strong>Tags:</strong> MERN, Web
-                  Development</div>
+                <div class="card-area"><strong>Tags:</strong> MERN, Web Development</div>
                 <div class="btn-container">
-                  <a href="https://github.com/katkhedepushpak/Jot-it-Down"
-                    target="_blank" class="btn btn-secondary">Source Code</a>
+                  <a href="https://github.com/katkhedepushpak/Jot-it-Down" target="_blank" class="btn btn-secondary">Source Code</a>
+                  <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalJotItDown">Details</button>
                 </div>
               </div>
             </div>
@@ -515,14 +738,11 @@ s
                   force deployment using classification techniques, cutting
                   response time by over 50%.
                 </p>
-                <div class="card-area"><strong>Tags:</strong> IoT, Machine
-                  Learning</div>
+                <div class="card-area"><strong>Tags:</strong> IoT, Machine Learning</div>
                 <div class="btn-container">
-                  <a href="https://github.com/katkhedepushpak/LATS"
-                    target="_blank" class="btn btn-secondary">Source Code</a>
-                  <a
-                    href="https://www.ijcseonline.org/pdf_paper_view.php?paper_id=3578&125-IJCSE-05702.pdf"
-                    target="_blank" class="btn btn-light">Journal Paper</a>
+                  <a href="https://github.com/katkhedepushpak/LATS" target="_blank" class="btn btn-secondary">Source Code</a>
+                  <a href="https://www.ijcseonline.org/pdf_paper_view.php?paper_id=3578&125-IJCSE-05702.pdf" target="_blank" class="btn btn-light">Paper</a>
+                  <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalLATS">Details</button>
                 </div>
               </div>
             </div>
@@ -541,10 +761,10 @@ s
                   execution time by over 30%. Automated ETL processes for
                   large-scale databases and optimized join operations.
                 </p>
-                <div class="card-area"><strong>Tags:</strong> Database
-                  Optimization</div>
+                <div class="card-area"><strong>Tags:</strong> Database Optimization</div>
                 <div class="btn-container">
                   <span class="btn btn-light" disabled>Research Project</span>
+                  <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalBanditJoins">Details</button>
                 </div>
               </div>
             </div>
@@ -562,11 +782,10 @@ s
                   Built a React.js web portal serving curated news articles,
                   providing users with a personalized experience.
                 </p>
-                <div class="card-area"><strong>Tags:</strong> Web
-                  Development</div>
+                <div class="card-area"><strong>Tags:</strong> Web Development</div>
                 <div class="btn-container">
-                  <a href="https://github.com/katkhedepushpak/news-dash/"
-                    target="_blank" class="btn btn-secondary">Source Code</a>
+                  <a href="https://github.com/katkhedepushpak/news-dash/" target="_blank" class="btn btn-secondary">Source Code</a>
+                  <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalNewsDash">Details</button>
                 </div>
               </div>
             </div>
@@ -585,12 +804,10 @@ s
                   term deposits. Achieved 96.73% recall using cost-sensitive
                   learning with penalized SVC and Random Forest classifiers.
                 </p>
-                <div class="card-area"><strong>Tags:</strong> Machine
-                  Learning</div>
+                <div class="card-area"><strong>Tags:</strong> Machine Learning</div>
                 <div class="btn-container">
-                  <a
-                    href="https://github.com/katkhedepushpak/Bank-Telemarketing-Campaign"
-                    target="_blank" class="btn btn-secondary">Source Code</a>
+                  <a href="https://github.com/katkhedepushpak/Bank-Telemarketing-Campaign" target="_blank" class="btn btn-secondary">Source Code</a>
+                  <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalBankAnalyzer">Details</button>
                 </div>
               </div>
             </div>
@@ -611,10 +828,10 @@ s
                   logging of progress timelines, outcomes, and feedback while
                   ensuring secure role-based access policies.
                 </p>
-                <div class="card-area"><strong>Tags:</strong> Application
-                  Development, DevOps</div>
+                <div class="card-area"><strong>Tags:</strong> Application Development, DevOps</div>
                 <div class="btn-container">
                   <span class="btn btn-light" disabled>Private Project</span>
+                  <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalLabTracker">Details</button>
                 </div>
               </div>
             </div>
@@ -635,10 +852,10 @@ s
                   resolving class imbalance and reducing model bias, enhancing
                   real-world applicability.
                 </p>
-                <div class="card-area"><strong>Tags:</strong> Deep
-                  Learning</div>
+                <div class="card-area"><strong>Tags:</strong> Deep Learning</div>
                 <div class="btn-container">
                   <span class="btn btn-light" disabled>Research Project</span>
+                  <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalMedicalGAN">Details</button>
                 </div>
               </div>
             </div>
@@ -659,12 +876,10 @@ s
                   DBSCAN. Enhanced understanding of neighborhood characteristics
                   to address resident preferences.
                 </p>
-                <div class="card-area"><strong>Tags:</strong> Machine Learning,
-                  Data Science</div>
+                <div class="card-area"><strong>Tags:</strong> Machine Learning, Data Science</div>
                 <div class="btn-container">
-                  <a
-                    href="https://github.com/katkhedepushpak/Toronto-clustering-segmentation"
-                    target="_blank" class="btn btn-secondary">Source Code</a>
+                  <a href="https://github.com/katkhedepushpak/Toronto-clustering-segmentation" target="_blank" class="btn btn-secondary">Source Code</a>
+                  <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalNeighborhood">Details</button>
                 </div>
               </div>
             </div>
@@ -683,12 +898,10 @@ s
                   SHA-256 algorithms. Implemented a public API for seamless
                   integration, documented with Swagger.
                 </p>
-                <div class="card-area"><strong>Tags:</strong>
-                  Cybersecurity</div>
+                <div class="card-area"><strong>Tags:</strong> Cybersecurity</div>
                 <div class="btn-container">
-                  <a
-                    href="https://github.com/katkhedepushpak/CrackStationAsService"
-                    target="_blank" class="btn btn-secondary">Source Code</a>
+                  <a href="https://github.com/katkhedepushpak/CrackStationAsService" target="_blank" class="btn btn-secondary">Source Code</a>
+                  <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalCrackStation">Details</button>
                 </div>
               </div>
             </div>
@@ -718,7 +931,7 @@ s
               <p>GPA: 3.75/4.0</p>
             </div>
             <div class="resume-item">
-              <h4>Bachelor of Engineering - Computer Engineering</h5>
+              <h4>Bachelor of Engineering - Computer Engineering</h4>
               <h5>2015 - 2019</h5>
               <p><em>Savitribai Phule Pune University, Pune</em></p>
               <p>GPA: 3.44/4.0</p>
@@ -728,7 +941,12 @@ s
           <div class="col-lg-6">
             <h3 class="resume-title">Professional Experience</h3>
 
-            <!-- New Position: Research Assistant -->
+            <div class="resume-item">
+              <h4>Software Engineer</h4>
+              <h5>May 2025 – Present</h5>
+              <p><em>Oregon State University, Corvallis, OR</em></p>
+            </div>
+
             <div class="resume-item">
               <h4>Research Assistant</h4>
               <h5>Dec 2024 – Present</h5>
@@ -742,13 +960,13 @@ s
             </div>
 
             <div class="resume-item">
-              <h4>Application Developer - DevOps</h5>
+              <h4>Software Engineer</h4>
               <h5>Oct 2019 – July 2022</h5>
               <p><em>IBM, Bangalore, India</em></p>
             </div>
 
             <div class="resume-item">
-              <h4>Data Science Intern</h5>
+              <h4>Data Science Intern</h4>
               <h5>July 2019 – Oct 2019</h5>
               <p><em>TechAmplifiers, Pune, India</em></p>
             </div>
@@ -759,116 +977,6 @@ s
     </section>
     <!-- End Resume Section -->
 
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Credentials</h2>
-          <p>"I believe certifications are the bridge between one's potential and one's  professional success, validating not just what you know, but how effectively you can apply it."</p>
-        </div>
-
-        <div class="row conatiner-fluid">
-          <a
-            href="https://www.credly.com/badges/ac87c6ea-b663-4aa8-bcae-b5c63ad4f787"
-            target="_blank">
-            <div
-              class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0"
-              data-aos="zoom-in" data-aos-delay="200" align="center"
-              style="width: 220px;">
-              <div class="icon-box iconbox-orange ">
-                <div class="icon">
-                  <img src="assets\img\pcap.png" alt height="110px">
-                </div>
-                <h4><a href>PCAP 31-03</a></h4>
-                <p>Python Certified Associate Progrmmer</p>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0"
-            data-aos="zoom-in" data-aos-delay="200" style="width: 220px;">
-            <a
-              href="https://www.credly.com/badges/d4316b9f-7ec1-4a44-8f15-6589808b9d77"
-              target="_blank">
-              <div class="icon-box iconbox-orange ">
-
-                <div class="icon">
-
-                  <img src="assets\img\aws.png" alt height="110px">
-                </a>
-              </div>
-              <h4>AWS Cloud Practitioner</h4>
-              <p>Amazon Webservices Certified Cloud Practitioner</p>
-
-            </div>
-          </a>
-        </div>
-
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0"
-          data-aos="zoom-in" data-aos-delay="200" style="width: 220px;">
-          <a
-            href="https://learn.microsoft.com/en-us/users/pushpakkatkhede-6761/transcript/vy8lku0jen6gnlo"
-            target="_blank">
-            <div class="icon-box iconbox-orange ">
-              <div class="icon">
-                <img src="assets\img\azure.png" alt height="110px">
-              </div>
-              <h4><a href>Azure Fundamentals</a></h4>
-              <p>Microsoft Certified Azure Fundamentals</p>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0"
-          data-aos="zoom-in" data-aos-delay="200" style="width: 220px;">
-          <a
-            href="https://www.credly.com/badges/fddb64ac-f02c-439d-9534-e417246238bc"
-            target="_blank">
-            <div class="icon-box iconbox-orange ">
-              <div class="icon">
-                <img src="assets\img\ibm.png" alt height="110px">
-              </div>
-              <h4><a href>Cloud Advocate</a></h4>
-              <p>IBM Certified Advocate - Cloud v1</p>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0"
-          data-aos="zoom-in" data-aos-delay="200" style="width: 220px;">
-          <a
-            href="https://www.credly.com/badges/c7faea29-5b13-4e41-87c2-c00bf806c258"
-            target="_blank">
-            <div class="icon-box iconbox-orange ">
-              <div class="icon">
-                <img src="assets\img\datascience.png" alt height="110px">
-              </div>
-              <h4><a href>Data Science Professional Certification</a></h4>
-              <p>Certificate issued by Coursera & authorized by IBM</p>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0"
-          data-aos="zoom-in" data-aos-delay="200" style="width: 220px;">
-          <a
-            href="https://www.credly.com/badges/af33cf93-91e4-4bfc-8453-f6fb5f7d4d3c"
-            target="_blank">
-            <div class="icon-box iconbox-orange ">
-              <div class="icon">
-                <img src="assets\img\capstone.png" alt height="110px">
-              </div>
-              <h4><a href>Applied Data Science Capstone</a></h4>
-              <p>Certificate issued by Coursera & authorized by IBM</p>
-            </div>
-          </a>
-        </div>
-
-      </div>
-
-    </div>
-  </section><!-- End Services Section -->
 
   <!-- ======= Testimonials Section ======= -->
 
@@ -883,8 +991,8 @@ s
       </div>
 
       <p align="center" style="color: grey;">
-        I am actively seeking for full-time opportunities in the field of
-        Machine Learning and Software Engineering.
+        I am actively seeking full-time Software Engineering roles
+        (full-stack, backend, and cloud).
       </p>
 
     </div>
@@ -909,9 +1017,287 @@ s
           class="bx bxl-linkedin"></i></a>
     </div>
     <div class="copyright">
-      <strong><span>©2025 Pushpak Vijay Katkhede</span></strong
+      <strong><span>©2025 Pushpak Vijay Katkhede</span></strong>
+    </div>
+  </div>
+</footer><!-- End Footer -->
 
-      </footer><!-- End Footer -->
+  <!-- ======= Resume Embed Section ======= -->
+  <section id="resume-view" style="padding:40px 0; background:#f8f9fa;">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title">
+        <h2>Resume</h2>
+        <p>View inline or <a href="assets/resume/pushpak_katkhede_resume.pdf" target="_blank">download PDF</a></p>
+      </div>
+      <iframe class="resume-embed-wrap" src="assets/resume/pushpak_katkhede_resume.pdf" title="Pushpak Katkhede Resume"></iframe>
+    </div>
+  </section>
+  <!-- ======= End Resume Embed Section ======= -->
+
+  <!-- ======= Project Modals ======= -->
+
+  <!-- Modal: Ask chAMP! -->
+  <div class="modal fade" id="modalAskChamp" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Ask chAMP! — RAG Chatbot</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p>Built an enterprise RAG chatbot (Ask chAMP!) to support a large-scale Application Modernization Program migration. The system ingests content from SharePoint files, Markdown docs, and structured databases, chunks and embeds them into a persistent vector index, and retrieves semantically relevant context to ground Claude API responses.</p>
+          <p><strong>Tech Stack:</strong></p>
+          <span class="modal-tech-tag">Python</span><span class="modal-tech-tag">Claude API</span><span class="modal-tech-tag">Vector Database</span><span class="modal-tech-tag">LangChain</span><span class="modal-tech-tag">RAG</span><span class="modal-tech-tag">SharePoint</span>
+          <p class="mt-3"><strong>Key Outcomes:</strong> Eliminated manual document search for migration teams; persistent caching avoids re-ingestion on restart; multi-source ingestion handles heterogeneous enterprise content.</p>
+          <p><strong>Role:</strong> Sole designer and developer</p>
+        </div>
+        <div class="modal-footer">
+          <span class="btn btn-light" disabled>Enterprise — Not Public</span>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Defects4REST -->
+  <div class="modal fade" id="modalDefects4REST" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Defects4REST — ICSE 2026</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p>Introduced Defects4REST, the first public benchmark dataset of real-world REST API defects, systematically mined from open-source repositories. Used a semi-automated pipeline combining NLP techniques and manual validation to classify defects into a novel taxonomy of categories.</p>
+          <p><strong>Tech Stack:</strong></p>
+          <span class="modal-tech-tag">Python</span><span class="modal-tech-tag">NLP</span><span class="modal-tech-tag">LLMs</span><span class="modal-tech-tag">REST API Analysis</span><span class="modal-tech-tag">GitHub Mining</span>
+          <p class="mt-3"><strong>Venue:</strong> ACM/IEEE International Conference on Software Engineering (ICSE) 2026 — peer-reviewed publication.</p>
+          <p><strong>Role:</strong> Research collaborator with Dr. Manish Motwani (ANSWER Lab, OSU)</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Silicon Forecaster -->
+  <div class="modal fade" id="modalSilicon" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Si Level Forecaster</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p>Applied LSTM-based deep learning to forecast silicon (Si) concentration levels in river systems. Collaborated with domain experts to validate insights and improve ecological modeling accuracy by 22% over baseline models.</p>
+          <p><strong>Tech Stack:</strong></p>
+          <span class="modal-tech-tag">Python</span><span class="modal-tech-tag">LSTM</span><span class="modal-tech-tag">NumPy</span><span class="modal-tech-tag">Pandas</span><span class="modal-tech-tag">TensorFlow</span><span class="modal-tech-tag">Time-Series</span>
+          <p class="mt-3"><strong>Key Outcome:</strong> 22% accuracy improvement; findings shared with domain ecologists for validation.</p>
+        </div>
+        <div class="modal-footer">
+          <a href="https://github.com/katkhedepushpak/silicon-analysis-lstm" target="_blank" class="btn btn-secondary">Source Code</a>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Jot-It-Down -->
+  <div class="modal fade" id="modalJotItDown" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Jot-It-Down — Notes App</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p>A full-stack cloud-based notes and reminders application built on the MERN stack. Users can securely manage notes, set reminders, and customize themes. Authentication is handled via JWT tokens.</p>
+          <p><strong>Tech Stack:</strong></p>
+          <span class="modal-tech-tag">MongoDB</span><span class="modal-tech-tag">Express.js</span><span class="modal-tech-tag">React</span><span class="modal-tech-tag">Node.js</span><span class="modal-tech-tag">JWT</span><span class="modal-tech-tag">REST API</span>
+          <p class="mt-3"><strong>Role:</strong> Full-stack developer — backend API, frontend React UI, and MongoDB data layer.</p>
+        </div>
+        <div class="modal-footer">
+          <a href="https://github.com/katkhedepushpak/Jot-it-Down" target="_blank" class="btn btn-secondary">Source Code</a>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: LATS -->
+  <div class="modal fade" id="modalLATS" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">LATS — Location-Aware Tracking System</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p>A multi-tier GPS-based emergency response system designed to optimize police force deployment. ML classification techniques route emergency calls to the nearest available units, reducing response time to under 45 seconds.</p>
+          <p><strong>Tech Stack:</strong></p>
+          <span class="modal-tech-tag">IoT</span><span class="modal-tech-tag">GPS</span><span class="modal-tech-tag">Machine Learning</span><span class="modal-tech-tag">Classification</span><span class="modal-tech-tag">Python</span>
+          <p class="mt-3"><strong>Key Outcomes:</strong> Response time under 45 seconds; over 50% reduction in deployment time. Published in IJCSE journal.</p>
+        </div>
+        <div class="modal-footer">
+          <a href="https://github.com/katkhedepushpak/LATS" target="_blank" class="btn btn-secondary">Source Code</a>
+          <a href="https://www.ijcseonline.org/pdf_paper_view.php?paper_id=3578&125-IJCSE-05702.pdf" target="_blank" class="btn btn-light">Journal Paper</a>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Bandit Joins -->
+  <div class="modal fade" id="modalBanditJoins" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Bandit Joins — PostgreSQL Optimization</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p>Modified PostgreSQL's C source code to improve join operation performance using hashing and indexing techniques informed by bandit algorithm strategies. Reduced join execution time by over 30% on large-scale datasets. Also automated ETL pipelines for test data preparation.</p>
+          <p><strong>Tech Stack:</strong></p>
+          <span class="modal-tech-tag">C</span><span class="modal-tech-tag">PostgreSQL</span><span class="modal-tech-tag">ETL</span><span class="modal-tech-tag">Database Internals</span><span class="modal-tech-tag">Hashing</span><span class="modal-tech-tag">Indexing</span>
+          <p class="mt-3"><strong>Key Outcome:</strong> 30%+ execution time reduction on join-heavy queries.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: NewsDash -->
+  <div class="modal fade" id="modalNewsDash" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">NewsDash — News Portal</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p>Built a React.js web portal that aggregates and displays curated news articles via third-party news APIs. Users get a personalized, category-filtered reading experience with a clean, responsive UI.</p>
+          <p><strong>Tech Stack:</strong></p>
+          <span class="modal-tech-tag">React.js</span><span class="modal-tech-tag">REST API</span><span class="modal-tech-tag">JavaScript</span><span class="modal-tech-tag">CSS</span>
+        </div>
+        <div class="modal-footer">
+          <a href="https://github.com/katkhedepushpak/news-dash/" target="_blank" class="btn btn-secondary">Source Code</a>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Bank Telemarket Analyzer -->
+  <div class="modal fade" id="modalBankAnalyzer" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Bank Telemarket Analyzer</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p>Developed a predictive system to forecast whether a bank telemarketing call would result in a term deposit subscription. Applied cost-sensitive learning to address severe class imbalance, achieving 96.73% recall using penalized SVM and Random Forest classifiers.</p>
+          <p><strong>Tech Stack:</strong></p>
+          <span class="modal-tech-tag">Python</span><span class="modal-tech-tag">scikit-learn</span><span class="modal-tech-tag">SVM</span><span class="modal-tech-tag">Random Forest</span><span class="modal-tech-tag">Pandas</span><span class="modal-tech-tag">Cost-Sensitive Learning</span>
+          <p class="mt-3"><strong>Key Outcome:</strong> 96.73% recall — optimized to minimize false negatives (missed leads).</p>
+        </div>
+        <div class="modal-footer">
+          <a href="https://github.com/katkhedepushpak/Bank-Telemarketing-Campaign" target="_blank" class="btn btn-secondary">Source Code</a>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Lab Progress Tracker -->
+  <div class="modal fade" id="modalLabTracker" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Lab Progress Tracker</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p>Full-stack Research Lab Management application for organizing experiment timelines, outcomes, and supervisor feedback. Implemented role-based access control (RBAC) to ensure secure separation between students, researchers, and administrators.</p>
+          <p><strong>Tech Stack:</strong></p>
+          <span class="modal-tech-tag">Vue.js</span><span class="modal-tech-tag">Spring Boot</span><span class="modal-tech-tag">PostgreSQL</span><span class="modal-tech-tag">RBAC</span><span class="modal-tech-tag">REST API</span>
+          <p class="mt-3"><strong>Role:</strong> Full-stack developer — frontend (Vue.js), backend (Spring Boot REST API), and database design (PostgreSQL).</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Medical GAN -->
+  <div class="modal fade" id="modalMedicalGAN" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Medical Dataset Augmentation</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p>Engineered Generative Adversarial Networks (GANs) to synthetically augment a skin lesion dataset suffering from severe class imbalance. Increased training samples by 180%, resolving model bias and improving real-world classification accuracy.</p>
+          <p><strong>Tech Stack:</strong></p>
+          <span class="modal-tech-tag">Python</span><span class="modal-tech-tag">PyTorch</span><span class="modal-tech-tag">GANs</span><span class="modal-tech-tag">CNN</span><span class="modal-tech-tag">Medical Imaging</span>
+          <p class="mt-3"><strong>Key Outcome:</strong> 180% increase in training samples; significant reduction in model bias on minority class.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Neighborhood Recommender -->
+  <div class="modal fade" id="modalNeighborhood" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Neighborhood Recommender</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p>Data-driven neighborhood recommendation system using unsupervised clustering to profile and segment Toronto neighborhoods by amenities, demographics, and venue density. Used Foursquare API for venue data.</p>
+          <p><strong>Tech Stack:</strong></p>
+          <span class="modal-tech-tag">Python</span><span class="modal-tech-tag">K-Means</span><span class="modal-tech-tag">DBSCAN</span><span class="modal-tech-tag">Pandas</span><span class="modal-tech-tag">Folium</span><span class="modal-tech-tag">Foursquare API</span>
+        </div>
+        <div class="modal-footer">
+          <a href="https://github.com/katkhedepushpak/Toronto-clustering-segmentation" target="_blank" class="btn btn-secondary">Source Code</a>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: CrackStation -->
+  <div class="modal fade" id="modalCrackStation" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">CrackStation MVP</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p>Built a password decryption library exposing a public REST API for SHA-256 hash lookups via a precomputed lookup table. API is documented with Swagger for seamless third-party integration.</p>
+          <p><strong>Tech Stack:</strong></p>
+          <span class="modal-tech-tag">Python</span><span class="modal-tech-tag">REST API</span><span class="modal-tech-tag">SHA-256</span><span class="modal-tech-tag">Swagger</span><span class="modal-tech-tag">Cybersecurity</span>
+          <p class="mt-3"><strong>Role:</strong> Backend developer — library design, API layer, and Swagger documentation.</p>
+        </div>
+        <div class="modal-footer">
+          <a href="https://github.com/katkhedepushpak/CrackStationAsService" target="_blank" class="btn btn-secondary">Source Code</a>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= End Project Modals ======= -->
 
       <div id="preloader"></div>
       <a href="#"
