@@ -11,7 +11,7 @@ export const profile = {
   facebook: 'https://www.facebook.com/katkhedepushpak/',
   resumeUrl: '/resume/pushpak_katkhede_resume.pdf',
   status: 'Open to Work',
-  authorization: 'Authorized to work in the US on F1 STEM OPT',
+  authorization: 'Authorized to work in the US',
 }
 
 export const bio = [
