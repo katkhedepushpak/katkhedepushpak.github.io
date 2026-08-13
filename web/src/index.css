@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-ink-900 text-slate-200 font-sans antialiased;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    @apply bg-accent-green/30 text-white;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-ink-900;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-ink-600 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-ink-500;
+  }
+}
+
+@layer components {
+  /* Notched "dev card" corner cut — the parallelogram accent used across cards */
+  .card-cut {
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% calc(100% - 22px),
+      calc(100% - 22px) 100%,
+      0 100%
+    );
+  }
+
+  .card-cut-sm {
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% calc(100% - 12px),
+      calc(100% - 12px) 100%,
+      0 100%
+    );
+  }
+
+  .parallelogram {
+    transform: skewX(-12deg);
+  }
+
+  .parallelogram-content {
+    transform: skewX(12deg);
+  }
+
+  .terminal-dot {
+    @apply inline-block w-3 h-3 rounded-full;
+  }
+
+  .prompt::before {
+    content: '$ ';
+    @apply text-accent-green;
+  }
+
+  .tag-pill {
+    @apply inline-flex items-center gap-1 rounded-md border border-ink-600 bg-ink-800/80 px-2.5 py-1 text-xs font-mono text-slate-300 transition-colors hover:border-accent-cyan/60 hover:text-accent-cyan;
+  }
+
+  .section-label {
+    @apply font-mono text-xs uppercase tracking-[0.25em] text-accent-green;
+  }
+
+  .glass-panel {
+    @apply border border-ink-600/80 bg-ink-850/70 backdrop-blur-sm;
+  }
+}
