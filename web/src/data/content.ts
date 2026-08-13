@@ -1,7 +1,7 @@
 export const profile = {
   name: 'Pushpak Vijay Katkhede',
   handle: 'katkhedepushpak',
-  location: 'Sunnyvale, CA',
+  location: 'Sunnyvale, CA · Corvallis, OR',
   roles: ['AI Engineer', 'Applied ML Engineer', 'Backend / DevOps Engineer', 'Developer'],
   tagline:
     'Building AI-driven systems, backend services, and cloud platforms that scale — from RAG pipelines and LLM agents to REST APIs.',
