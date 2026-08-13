@@ -53,7 +53,7 @@ export const skillGroups: SkillGroup[] = [
     key: 'languages',
     title: 'Languages',
     icon: 'Code2',
-    items: ['Python', 'Go', 'Java', 'C++', 'JavaScript', 'TypeScript', 'Bash'],
+    items: ['Python', 'Go', 'C++', 'JavaScript', 'TypeScript', 'Bash'],
   },
   {
     key: 'llm',
