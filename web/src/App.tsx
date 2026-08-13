@@ -15,7 +15,7 @@ export default function App() {
     <div className="relative min-h-screen">
       <BackgroundFX />
       <Nav />
-      <main>
+      <main className="lg:pl-20">
         <Hero />
         <Highlights />
         <PublicationBanner />
@@ -25,7 +25,7 @@ export default function App() {
         <ResumeSection />
         <Contact />
       </main>
-      <Footer />
+      <Footer className="lg:pl-20" />
     </div>
   )
 }

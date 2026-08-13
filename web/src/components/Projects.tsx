@@ -9,7 +9,7 @@ export default function Projects() {
   const [active, setActive] = useState<Project | null>(null)
 
   return (
-    <section id="projects" className="px-4 py-24 sm:px-6">
+    <section id="projects" className="scroll-mt-16 px-4 py-24 sm:px-6 lg:scroll-mt-0">
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           index="02 / PROJECTS"

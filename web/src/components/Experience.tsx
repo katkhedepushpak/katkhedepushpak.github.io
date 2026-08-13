@@ -5,7 +5,7 @@ import { experience, education } from '../data/content'
 
 export default function Experience() {
   return (
-    <section id="experience" className="px-4 py-24 sm:px-6">
+    <section id="experience" className="scroll-mt-16 px-4 py-24 sm:px-6 lg:scroll-mt-0">
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           index="03 / EXPERIENCE"

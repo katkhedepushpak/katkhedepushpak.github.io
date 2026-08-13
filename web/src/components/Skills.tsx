@@ -26,7 +26,7 @@ const ICONS: Record<string, LucideIcon> = {
 
 export default function Skills() {
   return (
-    <section id="skills" className="px-4 py-24 sm:px-6">
+    <section id="skills" className="scroll-mt-16 px-4 py-24 sm:px-6 lg:scroll-mt-0">
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           index="01 / SKILLS"

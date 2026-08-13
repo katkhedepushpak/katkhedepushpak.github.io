@@ -7,7 +7,7 @@ import { profile } from '../data/content'
 
 export default function Contact() {
   return (
-    <section id="contact" className="px-4 py-24 sm:px-6">
+    <section id="contact" className="scroll-mt-16 px-4 py-24 sm:px-6 lg:scroll-mt-0">
       <div className="mx-auto max-w-3xl">
         <SectionHeading index="05 / CONTACT" title="contact.sh" />
 

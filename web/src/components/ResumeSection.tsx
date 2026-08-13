@@ -5,7 +5,7 @@ import { profile } from '../data/content'
 
 export default function ResumeSection() {
   return (
-    <section id="resume" className="px-4 py-24 sm:px-6">
+    <section id="resume" className="scroll-mt-16 px-4 py-24 sm:px-6 lg:scroll-mt-0">
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           index="04 / RESUME"

@@ -7,7 +7,7 @@ import { profile, stats } from '../data/content'
 
 export default function Hero() {
   return (
-    <section id="home" className="relative overflow-hidden px-4 pt-32 pb-20 sm:px-6 lg:pt-40">
+    <section id="home" className="relative overflow-hidden px-4 pt-28 pb-20 sm:px-6 lg:pt-20">
       {/* decorative parallelogram accents */}
       <div className="parallelogram pointer-events-none absolute -top-10 right-[-6rem] hidden h-72 w-72 rounded-3xl border border-accent-green/10 bg-accent-green/5 lg:block" />
       <div className="parallelogram pointer-events-none absolute bottom-10 left-[-8rem] hidden h-64 w-64 rounded-3xl border border-accent-cyan/10 bg-accent-cyan/5 lg:block" />
@@ -97,9 +97,23 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="relative mx-auto w-full max-w-md"
+          className="mx-auto flex w-full max-w-md flex-col items-center gap-6"
         >
-          <Terminal title="whoami.sh">
+          <div className="glass-panel card-cut w-40 overflow-hidden sm:w-48">
+            <div className="flex items-center gap-2 border-b border-ink-600/80 bg-ink-800/80 px-3 py-2">
+              <span className="terminal-dot bg-[#ff5f56]" />
+              <span className="terminal-dot bg-[#ffbd2e]" />
+              <span className="terminal-dot bg-[#27c93f]" />
+              <span className="ml-2 truncate font-mono text-[10px] text-slate-400">profile.png</span>
+            </div>
+            <img
+              src="/profile-img.jpg"
+              alt="Pushpak Vijay Katkhede"
+              className="aspect-square w-full object-cover"
+            />
+          </div>
+
+          <Terminal title="whoami.sh" className="w-full">
             <p>
               <span className="text-accent-green">pushpak@sunnyvale</span>
               <span className="text-slate-500">:</span>
@@ -141,12 +155,6 @@ export default function Hero() {
               <span className="animate-blink text-slate-400">▌</span>
             </p>
           </Terminal>
-
-          <img
-            src="/profile-img.jpg"
-            alt="Pushpak Vijay Katkhede"
-            className="card-cut absolute -bottom-10 -right-6 h-28 w-28 border-4 border-ink-900 object-cover shadow-2xl sm:h-32 sm:w-32"
-          />
         </motion.div>
       </div>
     </section>
