@@ -8,7 +8,7 @@ export default function ResumeSection() {
     <section id="resume" className="scroll-mt-16 px-4 py-24 sm:px-6 lg:scroll-mt-0">
       <div className="mx-auto max-w-6xl">
         <SectionHeading
-          index="04 / RESUME"
+          index="05 / RESUME"
           title="resume.pdf"
           subtitle="Prefer paper? Grab the PDF, or scroll through it right here."
         />

@@ -9,7 +9,7 @@ export default function Contact() {
   return (
     <section id="contact" className="scroll-mt-16 px-4 py-24 sm:px-6 lg:scroll-mt-0">
       <div className="mx-auto max-w-3xl">
-        <SectionHeading index="05 / CONTACT" title="contact.sh" />
+        <SectionHeading index="06 / CONTACT" title="contact.sh" />
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

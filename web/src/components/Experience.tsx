@@ -8,7 +8,7 @@ export default function Experience() {
     <section id="experience" className="scroll-mt-16 px-4 py-24 sm:px-6 lg:scroll-mt-0">
       <div className="mx-auto max-w-6xl">
         <SectionHeading
-          index="03 / EXPERIENCE"
+          index="04 / EXPERIENCE"
           title="git log --graph"
           subtitle="Professional experience, rendered as commits."
         />

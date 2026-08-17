@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 import {
   Menu,
   X,
@@ -6,6 +7,7 @@ import {
   Home,
   Boxes,
   FileCode2,
+  BookOpen,
   GitBranch,
   FileText,
   Mail,
@@ -13,10 +15,18 @@ import {
 } from 'lucide-react'
 import { useActiveSection } from '../hooks/useActiveSection'
 
-const TABS = [
+type Tab = {
+  id: string
+  label: string
+  icon: typeof Home
+  path?: string
+}
+
+const TABS: Tab[] = [
   { id: 'home', label: 'hero.tsx', icon: Home },
   { id: 'skills', label: 'skills.tsx', icon: Boxes },
   { id: 'projects', label: 'projects.tsx', icon: FileCode2 },
+  { id: 'blog', label: 'blog.md', icon: BookOpen, path: '/blog' },
   { id: 'experience', label: 'experience.log', icon: GitBranch },
   { id: 'resume', label: 'resume.pdf', icon: FileText },
   { id: 'contact', label: 'contact.sh', icon: Mail },
@@ -24,11 +34,29 @@ const TABS = [
 
 export default function Nav() {
   const [open, setOpen] = useState(false)
-  const active = useActiveSection(TABS.map((t) => t.id))
+  const location = useLocation()
+  const navigate = useNavigate()
 
-  const go = (id: string) => {
+  const sectionIds = TABS.filter((t) => !t.path).map((t) => t.id)
+  const activeSectionId = useActiveSection(sectionIds)
+  const onHome = location.pathname === '/'
+  const active = onHome
+    ? activeSectionId
+    : location.pathname.startsWith('/blog')
+      ? 'blog'
+      : null
+
+  const go = (tab: Tab) => {
     setOpen(false)
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    if (tab.path) {
+      navigate(tab.path)
+      return
+    }
+    if (onHome) {
+      document.getElementById(tab.id)?.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      navigate('/', { state: { scrollTo: tab.id } })
+    }
   }
 
   return (
@@ -37,7 +65,7 @@ export default function Nav() {
       <nav className="fixed left-5 top-1/2 z-50 hidden -translate-y-1/2 lg:block">
         <div className="glass-panel card-cut flex w-52 flex-col gap-1 rounded-2xl px-3 py-4 shadow-xl shadow-black/30">
           <button
-            onClick={() => go('home')}
+            onClick={() => go(TABS[0])}
             className="mb-3 flex items-center gap-2 px-1 font-mono text-sm font-semibold text-white"
           >
             <TerminalSquare className="h-5 w-5 shrink-0 text-accent-green" />
@@ -56,7 +84,7 @@ export default function Nav() {
             return (
               <button
                 key={tab.id}
-                onClick={() => go(tab.id)}
+                onClick={() => go(tab)}
                 className={`relative flex items-center gap-2.5 rounded-lg px-2.5 py-2 font-mono text-xs transition-colors ${
                   isActive
                     ? 'bg-accent-green/10 text-accent-green'
@@ -90,7 +118,7 @@ export default function Nav() {
       <header className="fixed inset-x-0 top-0 z-50 border-b border-ink-600/70 bg-ink-900/85 backdrop-blur-md lg:hidden">
         <div className="flex items-center justify-between px-4 py-3 sm:px-6">
           <button
-            onClick={() => go('home')}
+            onClick={() => go(TABS[0])}
             className="flex items-center gap-2 font-mono text-sm font-semibold text-white"
           >
             <TerminalSquare className="h-5 w-5 text-accent-green" />
@@ -116,7 +144,7 @@ export default function Nav() {
               {TABS.map((tab) => (
                 <li key={tab.id}>
                   <button
-                    onClick={() => go(tab.id)}
+                    onClick={() => go(tab)}
                     className={`flex w-full items-center gap-2 rounded-md px-3 py-2 text-left font-mono text-sm ${
                       active === tab.id ? 'bg-ink-800 text-accent-green' : 'text-slate-300'
                     }`}
